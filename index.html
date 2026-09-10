@@ -61,8 +61,10 @@ h1{font-size:clamp(65px,12vw,190px);line-height:.82;letter-spacing:-.075em;max-w
 .btn{display:inline-flex;align-items:center;gap:20px;background:#080808;color:#fff;padding:17px 22px;font:11px "DM Mono";text-transform:uppercase;border:0;cursor:pointer}
 .btn span{color:var(--accent)}
 form{margin-top:60px;max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:15px}
-input{width:100%;border:1px solid rgba(0,0,0,.3);background:transparent;padding:20px;color:#080808;font:13px "DM Mono";outline:none}
-input::placeholder{color:#343b20}input:focus{border-color:#080808}.full{grid-column:1/-1}
+input{width:100%;border:1px solid rgba(0,0,0,.3);background:transparent;padding:20px;color:#080808;font:13px "DM Mono";outline:none;transition:background 0.3s ease, border-color 0.3s ease, color 0.3s ease;}
+input::placeholder{color:#343b20}input:focus{border-color:#080808}
+input:not(:placeholder-shown){background:#ffffff;color:#080808;border-color:#080808;}
+.full{grid-column:1/-1}
 .formNote{font:10px "DM Mono";margin-top:15px;color:#313a1d}
 footer{padding:55px 5vw;display:flex;justify-content:space-between;gap:30px;font:10px "DM Mono";color:#777;text-transform:uppercase}
 .reveal{opacity:0;transform:translateY(35px);transition:1s cubic-bezier(.2,.7,.2,1)}.reveal.on{opacity:1;transform:none}
