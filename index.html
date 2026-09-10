@@ -412,7 +412,8 @@ body:before{animation:grainShift .22s steps(2) infinite}
 <form id="castForm">
 <input id="name" required placeholder="YOUR NAME">
 <input id="phone" required placeholder="PHONE NUMBER">
-<input id="email" class="full" type="email" required placeholder="EMAIL ADDRESS">
+<input id="email" required type="email" placeholder="EMAIL ADDRESS">
+<input id="insta" required placeholder="INSTAGRAM HANDLE (@username)">
 <button class="btn full" type="submit">SUBMIT APPLICATION <span>↗</span></button>
 </form>
 <div class="formNote">By submitting, WhatsApp will open with your application details addressed to our casting contact.</div>
@@ -427,8 +428,8 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.targe
 document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 document.getElementById('castForm').addEventListener('submit',e=>{
  e.preventDefault();
- const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), email=document.getElementById('email').value.trim();
- const msg=`ACTOR APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0A%0AI'm interested in joining your acting / short film projects.`;
+ const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), email=document.getElementById('email').value.trim(), insta=document.getElementById('insta').value.trim();
+ const msg=`ACTOR APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInstagram: ${encodeURIComponent(insta)}%0A%0AI'm interested in joining your acting / short film projects.`;
  window.open(`https://wa.me/918135055154?text=${msg}`,'_blank');
 });
 </script>
