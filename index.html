@@ -99,22 +99,40 @@ body:before{animation:grainShift .22s steps(2) infinite}
   }
 
   .nav {
-    height: 68px;
-    padding: 0 5vw;
+    height: auto;
+    min-height: 68px;
+    padding: 12px 5vw;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: rgba(5,5,5,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    mix-blend-mode: normal;
   }
 
   .logo {
-    font-size: 29px;
+    font-size: 26px;
   }
 
   .navlinks {
-    display: none;
+    display: flex;
+    gap: 12px;
+    font-size: 10px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .navlinks a {
+    white-space: nowrap;
+    opacity: 0.9;
   }
 
   .hero {
     min-height: 100svh;
     height: auto;
-    padding: 20vh 5vw 8vh;
+    padding: 22vh 5vw 8vh;
     background-attachment: scroll;
     background-position: center center;
   }
@@ -300,6 +318,11 @@ body:before{animation:grainShift .22s steps(2) infinite}
   footer {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .navlinks {
+    font-size: 9px;
+    gap: 6px;
   }
 
   h1 {
