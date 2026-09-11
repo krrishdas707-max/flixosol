@@ -17,6 +17,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opa
 a{color:inherit;text-decoration:none}
 .nav{position:fixed;top:0;left:0;right:0;height:78px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;z-index:30;mix-blend-mode:difference}
 .logo{font-size:34px;font-weight:800;letter-spacing:-.055em;text-shadow:0 2px 25px rgba(0,0,0,.6)}.logo .flixo{color:#fff}.logo .sol{color:#d8ff3e}.navlinks{display:flex;gap:28px;font:11px "DM Mono",monospace;text-transform:uppercase}
+.menu-toggle{display:none;}
 .hero{min-height:100vh;position:relative;background:linear-gradient(90deg,rgba(3,3,3,.94) 0%,rgba(3,3,3,.68) 48%,rgba(3,3,3,.82) 100%),url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=90") center/cover no-repeat;display:flex;align-items:flex-end;padding:11vh 5vw 7vh;overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 35%,rgba(0,0,0,.8)),radial-gradient(ellipse at center,transparent 25%,rgba(0,0,0,.55) 100%);pointer-events:none;z-index:0}.heroGlow{position:absolute;width:60vw;height:60vw;right:-20vw;top:-25vw;border-radius:50%;background:radial-gradient(circle,rgba(216,255,62,.15),transparent 62%);filter:blur(20px);transition:transform .2s}
 .kicker{font:11px "DM Mono",monospace;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:25px}
@@ -75,6 +76,7 @@ body:before{animation:grainShift .22s steps(2) infinite}
 .hero h1{ text-shadow:0 8px 45px rgba(0,0,0,.5)}
 .card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.1s}.card:nth-child(3){animation-delay:.15s}.card:nth-child(4){animation-delay:.2s}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
 @media (max-width: 900px) {
   .heroContent {
     flex-direction: column-reverse;
@@ -86,6 +88,8 @@ body:before{animation:grainShift .22s steps(2) infinite}
     font-size: 11px;
   }
 }
+
+/* MOBILE STYLES */
 @media (max-width: 760px) {
 
   html {
@@ -99,34 +103,68 @@ body:before{animation:grainShift .22s steps(2) infinite}
   }
 
   .nav {
-    height: auto;
-    min-height: 68px;
-    padding: 12px 5vw;
-    flex-wrap: wrap;
-    gap: 12px;
-    background: rgba(5,5,5,0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    height: 70px;
+    padding: 0 5vw;
+    background: rgba(5,5,5,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     mix-blend-mode: normal;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
   .logo {
     font-size: 26px;
   }
 
-  .navlinks {
+  /* Three dots toggle button */
+  .menu-toggle {
     display: flex;
-    gap: 12px;
-    font-size: 10px;
-    width: 100%;
-    justify-content: space-between;
-    padding-top: 6px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--accent);
+    cursor: pointer;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+  }
+
+  /* Mobile Dropdown Menu */
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 5vw;
+    background: #0d0d0d;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 0;
+    width: 180px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    overflow: hidden;
+    z-index: 40;
+  }
+
+  .navlinks.active {
+    display: flex;
   }
 
   .navlinks a {
-    white-space: nowrap;
-    opacity: 0.9;
+    padding: 14px 20px;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--fg);
+  }
+
+  .navlinks a:last-child {
+    border-bottom: none;
+  }
+
+  .navlinks a:hover {
+    background: rgba(216,255,62,0.1);
+    color: var(--accent);
   }
 
   .hero {
@@ -306,11 +344,8 @@ body:before{animation:grainShift .22s steps(2) infinite}
   }
 }
 
-
 /* SMALL PHONES */
-
 @media (max-width: 390px) {
-
   .nav,
   .hero,
   .section,
@@ -320,64 +355,33 @@ body:before{animation:grainShift .22s steps(2) infinite}
     padding-right: 18px;
   }
 
-  .navlinks {
-    font-size: 9px;
-    gap: 6px;
-  }
-
-  h1 {
-    font-size: 17vw;
-  }
-
-  .statement {
-    font-size: 11.5vw;
-  }
-
-  .casting h2 {
-    font-size: 15.5vw;
-  }
-
-  .card {
-    min-height: 330px;
-  }
-
-  .card h3 {
-    font-size: 33px;
-  }
-
-  .phone {
-    width: 88vw;
-  }
+  h1 { font-size: 17vw; }
+  .statement { font-size: 11.5vw; }
+  .casting h2 { font-size: 15.5vw; }
+  .card { min-height: 330px; }
+  .card h3 { font-size: 33px; }
+  .phone { width: 88vw; }
 }
 
-
-/* MOBILE DEVICES DON'T NEED HOVER EFFECTS */
-
 @media (hover: none) {
-
-  .card:hover {
-    transform: none;
-    border-color: var(--line);
-  }
-
-  .card:hover .cardVisual {
-    transform: none;
-    opacity: .65;
-  }
-
-  .card:hover h3 {
-    transform: none;
-  }
-
-  .step:hover {
-    background: transparent;
-    transform: none;
-  }
+  .card:hover { transform: none; border-color: var(--line); }
+  .card:hover .cardVisual { transform: none; opacity: .65; }
+  .card:hover h3 { transform: none; }
+  .step:hover { background: transparent; transform: none; }
 }
 </style>
 </head>
 <body>
-<nav class="nav"><a class="logo" href="#"><span class="flixo">flixo</span><span class="sol">sol</span></a><div class="navlinks"><a href="https://about-us-kappa-eight.vercel.app/" target="_blank" rel="noopener noreferrer">About Us</a><a href="#work">Work</a><a href="#method">Method</a><a href="#casting">Casting</a></div></nav>
+<nav class="nav">
+  <a class="logo" href="#"><span class="flixo">flixo</span><span class="sol">sol</span></a>
+  <div class="menu-toggle" id="menuBtn">⋮</div>
+  <div class="navlinks" id="navMenu">
+    <a href="https://about-us-kappa-eight.vercel.app/" target="_blank" rel="noopener noreferrer">About Us</a>
+    <a href="#work">Work</a>
+    <a href="#method">Method</a>
+    <a href="#casting">Casting</a>
+  </div>
+</nav>
 
 <header class="hero">
 <div class="heroGlow" id="glow"></div>
@@ -447,10 +451,37 @@ body:before{animation:grainShift .22s steps(2) infinite}
 <footer><div>flixosol © 2026</div><div>STORIES / SHORT FILMS / SOCIAL</div><div>MADE BY YOUNG CREATORS</div></footer>
 
 <script>
+// Three Dot Menu Toggle
+const menuBtn = document.getElementById('menuBtn');
+const navMenu = document.getElementById('navMenu');
+
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside or clicking a link
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && e.target !== menuBtn) {
+    navMenu.classList.remove('active');
+  }
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+
+// Cursor glow
 const glow=document.getElementById('glow');
 window.addEventListener('pointermove',e=>{glow.style.transform=`translate(${(e.clientX/innerWidth-.5)*45}px,${(e.clientY/innerHeight-.5)*45}px)`});
+
+// Scroll animations
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+
+// Form submission
 document.getElementById('castForm').addEventListener('submit',e=>{
  e.preventDefault();
  const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), email=document.getElementById('email').value.trim(), insta=document.getElementById('insta').value.trim();
