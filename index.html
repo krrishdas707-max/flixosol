@@ -537,7 +537,7 @@ document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 document.getElementById('castForm').addEventListener('submit',e=>{
  e.preventDefault();
  const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), email=document.getElementById('email').value.trim(), insta=document.getElementById('insta').value.trim();
- const msg=`ACTOR APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInstagram: ${encodeURIComponent(insta)}%0A%0AI'm interested in joining your acting / short film projects.`;
+ const msg=`ARTIST APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInstagram: ${encodeURIComponent(insta)}%0A%0AI'm interested in joining your visual projects.`;
  window.open(`https://wa.me/918135055154?text=${msg}`,'_blank');
 });
 </script>
