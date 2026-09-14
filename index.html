@@ -404,7 +404,7 @@ body:before{animation:grainShift .22s steps(2) infinite}
 <div class="kicker">Independent visual storytellers / Silchar</div>
 <div class="heroContent">
   <h1>MAKE<br>IT FEEL.</h1>
-  <a href="#casting" class="creatorsBtn">Looking for Creators <span>↘</span></a>
+  <a href="#casting" class="creatorsBtn">Register Now <span>↘</span></a>
 </div>
 <p class="heroSub">We make stories, short films and social films that don't look like they were made by teenagers.</p>
 </div>
@@ -451,7 +451,7 @@ body:before{animation:grainShift .22s steps(2) infinite}
 
 <section class="casting reveal" id="casting">
 <div class="eyebrow">05 / Open casting</div>
-<h2>WE'RE<br>LOOKING<br>FOR ACTORS.</h2>
+<h2>WE'RE<br>LOOKING<br>FOR ARTISTS.</h2>
 <p>Interested in acting, short films, reels or visual storytelling? We're currently looking for people who want to create, experiment and build something memorable with us.</p>
 <form id="castForm">
 <input id="name" required placeholder="YOUR NAME">
@@ -500,7 +500,7 @@ document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 document.getElementById('castForm').addEventListener('submit',e=>{
  e.preventDefault();
  const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.trim(), email=document.getElementById('email').value.trim(), insta=document.getElementById('insta').value.trim();
- const msg=`ACTOR APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInstagram: ${encodeURIComponent(insta)}%0A%0AI'm interested in joining your acting / short film projects.`;
+ const msg=`ACTOR APPLICATION%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInstagram: ${encodeURIComponent(insta)}%0A%0AI'm interested in joining your visual projects.`;
  window.open(`https://wa.me/918135055154?text=${msg}`,'_blank');
 });
 </script>
